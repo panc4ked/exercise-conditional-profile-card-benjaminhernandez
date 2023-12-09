@@ -29,6 +29,11 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  if (variables.lastName == null) variables.lastName = "Last-name";
+  if (variables.name == null) variables.name = "Name";
+  if (variables.city == null) variables.city = "city";
+  if (variables.country == null) variables.country = "Country";
+  if (variables.role == null) variables.role = "Role";
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
